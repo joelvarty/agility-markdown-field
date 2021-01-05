@@ -28,7 +28,9 @@ var MarkdownCustomField = function () {
 
 			var htmlContent = `
 				<div class="markdown-field">
-					<input style='width:100%' data-bind='value:value'>
+					<link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+					<script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+					<textarea data-bind='value:value'></textarea>
 				</div>
 				`;
 			//pull down the html template and load it into the element
@@ -50,6 +52,13 @@ var MarkdownCustomField = function () {
 				var self = this;
 
 				self.value = options.fieldBinding; //.extend({ throttle: 500 });
+
+				setTimeout(function() {
+
+					var simplemde = new SimpleMDE({ element: $("textarea", options.$elem)[0] });
+
+
+				}, 1000)
 
 			}
 

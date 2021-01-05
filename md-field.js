@@ -57,7 +57,7 @@ var MarkdownCustomField = function () {
 
 					var simplemde = new SimpleMDE({ element: $("textarea", options.$elem)[0] });
 					simplemde.codemirror.on("change", function(){
-						self.value(implemde.value())
+						self.value(simplemde.value())
 						console.log(simplemde.value());
 					});
 
